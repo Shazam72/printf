@@ -2,6 +2,11 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stdio.h>
+/**
+ * _printf - custom implementation of stdio function printf
+ * @format: formated string
+ * Return: 0 if no problem appear
+ */
 int _printf(const char *format, ...)
 {
 	va_list ap;

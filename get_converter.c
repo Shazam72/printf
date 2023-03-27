@@ -1,5 +1,10 @@
 #include "main.h"
 
+/**
+ *get_converter - function that get the correct converter
+ *@c: specifier for conversion
+ *Return: converter type fonction otherwise NULL
+ */
 converter get_converter(char c)
 {
 	specifier_params specifiers[] = {
