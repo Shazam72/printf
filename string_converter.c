@@ -14,8 +14,8 @@ int string_converter(va_list ap)
 	str = va_arg(ap, char*);
 	if (str == NULL)
 	{
-		write(STDOUT_FILENO, "(null)", 7);
-		return (7);
+		write(STDOUT_FILENO, "(null)", 6);
+		return (6);
 	}
 	len = strlen(str);
 	write(STDOUT_FILENO, str, len);
