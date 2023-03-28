@@ -1,8 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
 /**
  * _printf - custom implementation of stdio function printf
  * @format: formated string

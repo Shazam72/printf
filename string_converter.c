@@ -7,9 +7,13 @@
  */
 int string_converter(va_list ap)
 {
-	char *str = va_arg(ap, char*);
-	unsigned int len = strlen(str);
+	char *str = NULL;
+	unsigned int len = 0;
 
+	str = va_arg(ap, char*);
+	if (str == NULL)
+		return (0);
+	len = strlen(str);
 	write(STDOUT_FILENO, str, len);
 	return (len);
 }
