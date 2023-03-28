@@ -10,7 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list ap;
-	int i = 0;
+	int i = 0, len = 0;
 
 
 	va_start(ap, format);
@@ -18,27 +18,27 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-
 			converter func = get_converter(format[i + 1]);
 
 			if (format[i + 1] == '%')
 			{
 				write(1, &format[i++], 1);
-				continue;
+				len += 1;
 			}
 			if (func != NULL)
 			{
-				func(ap);
+				len += func(ap);
 				i++;
-				continue;
 			}
-			else
-				write(1, &format[i], 1);
+				continue;
 		}
 		else
+		{
 			write(1, &format[i], 1);
+			len += 1;
+		}
 	}
 	va_end(ap);
 
-	return (0);
+	return (len);
 }

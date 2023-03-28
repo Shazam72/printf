@@ -1,9 +1,15 @@
 #include "main.h"
+
 /**
  * string_converter - converter function for strings
  * @ap: variadic list of argument
+ * Return: number of bytes printed
  */
-void string_converter(va_list ap)
+int string_converter(va_list ap)
 {
-	print_str(va_arg(ap, char*));
+	char *str = va_arg(ap, char*);
+	unsigned int len = strlen(str);
+
+	write(STDOUT_FILENO, str, len);
+	return (len);
 }
