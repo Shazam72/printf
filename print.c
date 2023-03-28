@@ -2,6 +2,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
 /**
  * _printf - custom implementation of stdio function printf
  * @format: formated string
@@ -25,10 +26,15 @@ int _printf(const char *format, ...)
 				write(1, &format[i++], 1);
 				len += 1;
 			}
-			if (func != NULL)
+			else if (func != NULL)
 			{
 				len += func(ap);
 				i++;
+			}
+			else
+			{
+				write(1, &format[i], 1);
+				len += 1;
 			}
 				continue;
 		}
