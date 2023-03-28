@@ -6,10 +6,9 @@
  */
 int char_converter(va_list ap)
 {
-	char c = va_arg(ap, int);
+	char c;
 
-	if (c == '\0')
-		return (0);
+	c = va_arg(ap, int);
 	write(1, &c, 1);
 	return (1);
 }
