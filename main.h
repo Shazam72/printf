@@ -6,7 +6,8 @@
 #include <unistd.h>
 
 typedef int (*converter)(va_list);
-typedef struct specifier_params {
+typedef struct specifier_params
+{
 	char sp;
 	converter func;
 } specifier_params;
